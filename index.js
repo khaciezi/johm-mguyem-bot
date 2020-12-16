@@ -60,5 +60,9 @@ client.on('message', async message => {
 	if (commandName === 'react') {
 		message.react('😄');
 	}
+	if (commandName === 'setup') {
+		client.user.setUsername('Johm Mguyem');
+		client.user.setAvatar('botpfp.jpg');
+	}
 });
 client.login(token);
