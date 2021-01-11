@@ -104,5 +104,9 @@ client.on('message', async message => {
 		message.channel.send(`**${string}**`);
 		message.channel.send(list[0].definition);
 	}
+	if (commandName === 'meme') {
+		const fetched = await fetch('https://meme-api.herokuapp.com/gimme').then(response => response.json());
+		message.channel.send(fetched.url);
+	}
 });
 client.login(token);
